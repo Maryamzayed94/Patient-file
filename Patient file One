@@ -1,0 +1,8 @@
+public class PatientBillCalculator { 
+public static void main(String[] args) {     
+Scanner scanner = new Scanner(System.in);       
+System.out.println("Enter the number of days the patient stayed in the hospital:");   
+int numberOfDays = scanner.nextInt();          
+}  
+public static double calculateTotalBill(int days, double dailyRate, double additionalCharges) {   
+return (days * dailyRate) + additionalCharges;     } }
