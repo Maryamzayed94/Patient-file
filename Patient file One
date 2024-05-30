@@ -2,7 +2,13 @@ public class PatientBillCalculator {
 public static void main(String[] args) {     
 Scanner scanner = new Scanner(System.in);       
 System.out.println("Enter the number of days the patient stayed in the hospital:");   
-int numberOfDays = scanner.nextInt();          
+int numberOfDays = scanner.nextInt(); 
+System.out.println("Enter the daily rate:");        
+double dailyRate = scanner.nextDouble();
+System.out.println("Enter the additional charges (e.g., medication, procedures):");       
+double additionalCharges = scanner.nextDouble();
+double totalBill = calculateTotalBill(numberOfDays, dailyRate, additionalCharges);
+System.out.printf("The total bill for the patient is: $%.2f\n", totalBill);
 }  
 public static double calculateTotalBill(int days, double dailyRate, double additionalCharges) {   
 return (days * dailyRate) + additionalCharges;     } }
