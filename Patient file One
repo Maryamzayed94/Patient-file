@@ -7,8 +7,16 @@ System.out.println("Enter the daily rate:");
 double dailyRate = scanner.nextDouble();
 System.out.println("Enter the additional charges (e.g., medication, procedures):");       
 double additionalCharges = scanner.nextDouble();
+System.out.println("Enter the discount rate (in percentage):");
+double discountRate = scanner.nextDouble();
 double totalBill = calculateTotalBill(numberOfDays, dailyRate, additionalCharges);
+double discountedBill = calculateDiscountedBill(totalBill, discountRate);
 System.out.printf("The total bill for the patient is: $%.2f\n", totalBill);
+System.out.printf("The total bill after applying the discount is: ", discountedBill);
 }  
 public static double calculateTotalBill(int days, double dailyRate, double additionalCharges) {   
-return (days * dailyRate) + additionalCharges;     } }
+return (days * dailyRate) + additionalCharges;     } 
+public static double calculateDiscountedBill(double totalBill, double discountRate) {  
+double discount = totalBill * (discountRate / 100);       
+return totalBill - discount;     }
+}
